@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Task',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                ('uuid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('status', models.CharField(max_length=50)),
                 ('name', models.CharField(max_length=500)),
                 ('date', models.CharField(max_length=50)),
                 ('time', models.CharField(max_length=50)),
-                ('type', models.CharField(max_length=50)),
+                ('task_type', models.CharField(max_length=50)),
                 ('priority', models.CharField(max_length=50)),
             ],
         ),
