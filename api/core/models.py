@@ -1,9 +1,8 @@
 from django.db import models
-import uuid
 
 
 class Task(models.Model):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    uuid = models.CharField(max_length=50, primary_key=True)
     status = models.CharField(max_length=50)
     name = models.CharField(max_length=500)
     date = models.CharField(max_length=50)
