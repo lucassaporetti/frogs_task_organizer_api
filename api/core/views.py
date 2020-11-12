@@ -1,15 +1,12 @@
-from rest_framework import viewsets
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from rest_framework.viewsets import ModelViewSet
+
 from .models import Task
 from .serializers import TaskSerializer
 
 
-class TaskViewSet(viewsets.ModelViewSet, RetrieveUpdateDestroyAPIView):
+class TaskViewSet(ModelViewSet, RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-
-    def get_object(self):
-        return Task.objects.get()
-
 
 # Create your views here.
